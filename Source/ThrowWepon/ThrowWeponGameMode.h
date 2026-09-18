@@ -26,6 +26,26 @@ private:
 
 	// 現在何人のプレイヤーが参加しているか
 	int32 PlayerCount;
+	//制限時間
+	float Gametime;
+	//ゲーム開始からの経過時間
+	float ElapsedTime;
+	//ゲームが開始したか
+	bool bGameStarted;
+	//タイマー処理
+	FTimerHandle GameTimerHandle;
+	//ゲーム時間を更新する関数
+	void UpdateGameTime();
 
-	float
+    //カウントダウンの現在値
+	int32 Countdown;
+
+	//カウントダウン中か
+	bool bCountdownActive;
+
+	//カウントダウン用タイマー
+	FTimerHandle CountdownTimerHandle;
+
+	//カウントダウン処理
+	void UpdateCountdown();
 };
